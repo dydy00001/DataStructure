@@ -21,9 +21,9 @@ class CircularLinkedList:
         newNode = ListNode(newItem,self.__tail.next)
         self.__tail.next=newNode
         self.__tail = newNode
-        self.numItems += 1
+        self.__numItems += 1
 
-    def pop(selfself, *args):
+    def pop(self, *args):
         if self.isEmpty():
             return None
         if len(args) != 0:
@@ -140,7 +140,7 @@ class CircularLinkedList:
 
 
     def __iter__(self):
-        return CircularLinkedList(self)
+        return CircularLinkedListIterator(self)
 
 class CircularLinkedListIterator:
     def __init__(self, alist):
@@ -153,4 +153,6 @@ class CircularLinkedListIterator:
             item = self.iterPosition.item
             self.iterPosition = self.iterPosition.next
             return item
+
+
 
